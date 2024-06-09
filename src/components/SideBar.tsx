@@ -46,11 +46,9 @@ const SideBar: FC = () => {
     <div className="flex flex-col space-y-4 p-4">
       {MenuList.map((list, i) => (
         <Link href={list.link} key={i} className="group">
-          <div className="flex items-center space-x-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+          <div className="flex items-center space-x-4 p-2 rounded-md hover:bg-hover cursor-pointer group-hover:text-primary transition-all duration-500">
             {list.icon}
-            <span className="text-gray-900 font-medium group-hover:text-blue-500">
-              {list.title}
-            </span>
+            <span className="font-medium">{list.title}</span>
           </div>
         </Link>
       ))}

@@ -1,16 +1,12 @@
 "use client";
 import React from "react";
-import BookCard from "@/components/BookCard";
 
-import { books } from "@/constants/mockData";
-import { motion } from "framer-motion";
-import styles from "../../page.module.css";
-export default function Dashboard() {
+export default function Create() {
   return (
-    <main className={styles.main}>
+    <main className="bg-secondary p-8 rounded-lg">
       <div>
-        <div className={styles.grouper}>
-          <h1 className={styles.title}>Create Page</h1>
+        <div>
+          <h1 className="text-xl my-4">Create Page</h1>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Consequuntur saepe aut, asperiores odio quibusdam rem ad eaque sunt
