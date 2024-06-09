@@ -2,8 +2,8 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { LayoutProps } from "../layout";
-import Header from "@/components/Header";
-import SideBar from "@/components/SideBar";
+import Header from "@/components/header/Header";
+import SideBar from "@/components/sideBar/SideBar";
 import styles from "../page.module.css";
 
 const DashboardLayout = ({ children }: LayoutProps) => {

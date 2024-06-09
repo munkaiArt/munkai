@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import BookCard from "@/components/BookCard";
+import BookCard from "@/components/cards/BookCard";
 import { books } from "@/constants/mockData";
 import Link from "next/link";
 
