@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 const Header: FC = () => {
   return (
@@ -13,9 +14,7 @@ const Header: FC = () => {
         />
       </div>
       <div className="flex items-center gap-x-6">
-        <button className="bg-primary text-primary-foreground font-semibold py-2 px-4 rounded-lg">
-          Connect Wallet
-        </button>
+        <Button className="font-semibold">Connect Wallet</Button>
         <Link href="/dashboard/profile">
           <img
             src="https://imageio.forbes.com/specials-images/imageserve/6244c655b6ecfb569a31a3ba/John-Cena-performing-his-famous--You-Can-t-See-Me--taunt-/0x0.jpg?format=jpg&crop=1200,675,x0,y0,safe&width=960"

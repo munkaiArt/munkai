@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import { Poppins } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
+const space_Grotesk = Space_Grotesk({
   weight: "400",
   subsets: ["latin"],
 });
@@ -17,7 +17,7 @@ export type LayoutProps = { children: React.ReactNode };
 export default async function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={space_Grotesk.className}>{children}</body>
     </html>
   );
 }

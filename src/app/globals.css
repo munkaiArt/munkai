@@ -2,56 +2,153 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --popover: rgb(255, 255, 255);
-  --popover-foreground: rgb(10, 10, 10);
-  --primary: rgb(0, 96, 151);
-  --primary-foreground: rgb(135, 206, 235);
-  --secondary: rgb(247, 247, 247);
-  --secondary-foreground: rgb(26, 26, 26);
-  --muted: rgb(242, 242, 242);
-  --muted-foreground: rgb(120, 120, 120);
-  --accent: rgb(242, 242, 242);
-  --accent-foreground: rgb(26, 26, 26);
-  --destructive: rgb(229, 57, 53);
-  --destructive-foreground: rgb(250, 250, 250);
-  --border: rgb(229, 229, 229);
-  --input: rgb(229, 229, 229);
-  --ring: rgb(0, 96, 151);
-  --hoverbg: rgba(135, 206, 235, 0.2);
-  --opac: rgb(38, 46, 49);
-  --radius: 0.75rem;
-}
+/* @import "../../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-calendars/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-lists/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-navigations/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-popups/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css";
+@import "../../node_modules/@syncfusion/ej2-react-schedule/styles/material.css"; */
 
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
+    --background: rgb(255, 255, 255);
+    --foreground: rgb(11, 11, 11);
+
+    --card: rgb(255, 255, 255);
+    --card-foreground: rgb(10, 10, 10);
+
+    --popover: rgb(255, 255, 255);
+    --popover-foreground: rgb(10, 10, 10);
+
+    --primary: rgb(0, 96, 151);
+    --primary-foreground: rgb(135, 206, 235);
+
+    --secondary: rgb(247, 247, 247);
+    --secondary-foreground: rgb(26, 26, 26);
+
+    --muted: rgb(242, 242, 242);
+    --muted-foreground: rgb(120, 120, 120);
+
+    --accent: rgb(242, 242, 242);
+    --accent-foreground: rgb(26, 26, 26);
+
+    --destructive: rgb(229, 57, 53);
+    --destructive-foreground: rgb(250, 250, 250);
+
+    --border: rgb(229, 229, 229);
+
+    --input: rgb(229, 229, 229);
+
+    --ring: rgb(0, 96, 151);
+
+    --hoverbg: rgba(135, 206, 235, 0.2);
+
+    --opac: rgb(230, 244, 248);
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
     --background: rgb(11, 11, 11);
     --foreground: rgb(242, 242, 242);
+
     --card: rgb(43, 43, 43);
     --card-foreground: rgb(242, 242, 242);
+
     --popover: rgb(23, 23, 23);
     --popover-foreground: rgb(242, 242, 242);
+
     --primary: rgb(135, 206, 235);
     --primary-foreground: rgb(0, 96, 151);
+
     --secondary: rgb(28, 28, 28);
     --secondary-foreground: rgb(250, 250, 250);
+
     --muted: rgb(38, 38, 38);
     --muted-foreground: rgb(163, 163, 163);
+
     --accent: rgb(64, 32, 32);
     --accent-foreground: rgb(250, 250, 250);
+
     --destructive: rgb(153, 51, 51);
     --destructive-foreground: rgb(255, 229, 229);
+
     --border: rgb(41, 41, 41);
+
     --input: rgb(41, 41, 41);
+
     --ring: rgb(135, 206, 235);
+
     --hoverbg: rgba(135, 206, 235, 0.2);
+
     --opac: rgb(38, 46, 49);
   }
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
+@layer base {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--secondary);
+    border-radius: 30px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: rgba(135, 206, 235, 0.5);
+    border-radius: 30px;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--secondary);
+  border-radius: 30px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(135, 206, 235, 0.5);
+  border-radius: 30px;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+li.recharts-legend-item.legend-item-0 {
+  display: none !important;
 }
 
 .bookContainer {
@@ -72,19 +169,4 @@ body {
   padding: 20px 30px;
   flex-grow: 1;
   margin: 20px 10px;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }
