@@ -31,7 +31,7 @@ const infoData = [
 
 const Info: React.FC = () => {
   return (
-    <section className="bg-hover mt-28">
+    <section className="bg-hover mt-20">
       <div className="container flex justify-center items-center">
         <div className="flex flex-wrap justify-between items-center w-full max-w-screen-xl px-4 md:p-16">
           {infoData.map((info, index) => (

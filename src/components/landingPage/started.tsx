@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import Connect from "../../../public/vectors/connect.svg";
 import Fund from "../../../public/vectors/fund.svg";
@@ -12,9 +13,10 @@ import {
 import Image from "next/image";
 
 const Started = () => {
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [viewportWidth, setViewportWidth] = useState(0);
 
   useEffect(() => {
+    setViewportWidth(window.innerWidth);
     const handleResize = () => {
       setViewportWidth(window.innerWidth);
     };
@@ -41,49 +43,53 @@ const Started = () => {
   ];
 
   return (
-    <div className="mt-28">
+    <section className="mt-20">
       <div className="flex justify-center items-center">
-        <div className="block">
-          <h1 className="text-center font-bold mb-8">GETTING STARTED</h1>
+        <h1 className="text-center font-bold mb-8">GETTING STARTED</h1>
+      </div>
 
-          {viewportWidth < 768 ? (
-            <Carousel className="relative">
-              <CarouselContent className="flex">
-                {carouselItems.map((item, index) => (
-                  <CarouselItem key={index} className="mx-8">
+      {viewportWidth < 768 ? (
+        <div className="container max-w-sm">
+          <Carousel>
+            <CarouselContent className="flex">
+              {carouselItems.map((item, index) => (
+                <CarouselItem key={index} className="mx-4 flex-shrink-0">
+                  <div className="flex flex-col items-center">
                     <Image
                       src={item.img}
                       alt="get_started"
                       className="h-56 w-56 object-cover bg-[#e1f5fa]"
                     />
-                    <div className="whitespace-nowrap bg-secondary text-center text-sm p-2">
+                    <div className="w-56 bg-secondary text-center text-sm p-2">
                       <h6 className="font-roboto">{item.text}</h6>
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          ) : (
-            <div className="flex justify-between items-center">
-              {carouselItems.map((item, index) => (
-                <div key={index} className="mx-8">
-                  <Image
-                    src={item.img}
-                    alt="get_started"
-                    className="h-56 w-56 object-cover bg-[#e1f5fa]"
-                  />
-                  <div className="whitespace-nowrap bg-secondary text-center text-sm p-2">
-                    <h6 className="font-semibold">{item.text}</h6>
                   </div>
-                </div>
+                </CarouselItem>
               ))}
-            </div>
-          )}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
-      </div>
-    </div>
+      ) : (
+        <div className="flex justify-between items-center">
+          {carouselItems.map((item, index) => (
+            <div key={index} className="mx-8 flex-shrink-0">
+              <div className="flex flex-col items-center">
+                <Image
+                  src={item.img}
+                  alt="get_started"
+                  className="h-56 w-56 object-cover bg-[#e1f5fa]"
+                />
+                <div className="w-56 bg-secondary text-center text-sm p-2">
+                  <h6 className="font-semibold">{item.text}</h6>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
   );
 };
 

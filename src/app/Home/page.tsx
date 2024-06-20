@@ -9,13 +9,15 @@ import Guides from "@/components/landingPage/guides";
 
 function LandingPage() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <Hero />
-      <Started />
-      <MunkaiPubs />
-      <Info />
-      <Guides />
+      <main className="flex-grow">
+        <Hero />
+        <Started />
+        <MunkaiPubs />
+        <Info />
+        <Guides />
+      </main>
       <Footer />
     </div>
   );

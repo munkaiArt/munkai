@@ -3,7 +3,7 @@ import React from "react";
 const Guides: React.FC = () => {
   return (
     <div>
-      <section className="guide">
+      <section className="mt-20 px-6">
         <style>{`
           .video-container {
             overflow: hidden;
