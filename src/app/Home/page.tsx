@@ -4,6 +4,7 @@ import Hero from "@/components/landingPage/hero";
 import Started from "@/components/landingPage/started";
 import Footer from "@/components/landingPage/footer";
 import MunkaiPubs from "@/components/landingPage/mpubs";
+import Info from "@/components/landingPage/info";
 
 function LandingPage() {
   return (
@@ -12,6 +13,7 @@ function LandingPage() {
       <Hero />
       <Started />
       <MunkaiPubs />
+      <Info />
       <Footer />
     </div>
   );
