@@ -12,7 +12,11 @@ const Navbar = () => {
     <nav className="shadow-md">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <Link href="/">
-          <Image src={MunkaiLogo} alt="Logo" className="h-12 w-32" />
+          <Image
+            src={MunkaiLogoDark}
+            alt="Logo"
+            className="h-6 w-24 md:h-8 md:w-32"
+          />
         </Link>
         <div className="hidden md:flex space-x-6">
           <Button>

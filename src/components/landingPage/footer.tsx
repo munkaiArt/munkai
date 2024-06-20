@@ -10,18 +10,22 @@ const Footer: React.FC = () => {
   return (
     <section className="bg-secondary mt-20 border-t-2 border-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex justify-between">
-          <div className="md:w-1/4">
-            <Image src={MunkaiLogoDark} alt="Munkai" className="h-12" />
+        <div className="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
+          <div className="md:w-1/4 flex flex-col space-y-4">
+            <Image
+              src={MunkaiLogoDark}
+              alt="Munkai"
+              className="h-6 w-24 md:h-8 md:w-32"
+            />
             <p className="text-sm">
               Creating a Read-to-Earn (R2E) platform on the blockchain for
               readers, crypto enthusiasts, and creators.
             </p>
           </div>
 
-          <div className="space-y-1">
+          <div className="flex flex-col space-y-4 md:space-y-0">
             <p className="font-semibold uppercase">Social Links</p>
-            <div className="flex flex-col text-primary text-sm">
+            <div className="flex flex-col text-primary text-sm space-y-2">
               <Link
                 href="https://t.me/munkaiArt"
                 target="_blank"
@@ -53,17 +57,17 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="space-y-1">
+          <div className="flex flex-col space-y-4 md:space-y-0">
             <p className="font-semibold uppercase">Contact Us</p>
-            <div className="flex flex-col text-primary text-sm">
+            <div className="flex flex-col text-primary text-sm space-y-2">
               <Link href="mailto:hello@munkai.art">hello@munkai.art</Link>
               <Link href="/contact">Contact Us</Link>
             </div>
           </div>
 
-          <div className="space-y-1">
+          <div className="flex flex-col space-y-4 md:space-y-0 md:w-1/4">
             <p className="font-semibold uppercase">Legal</p>
-            <div className="flex flex-col text-primary text-sm">
+            <div className="flex flex-col text-primary text-sm space-y-2">
               <Link href="/terms" target="_blank" rel="noopener noreferrer">
                 Terms and conditions
               </Link>
@@ -88,7 +92,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <hr className="my-4" />
+        <hr className="my-4 border-primary" />
         <p className="text-sm text-center">
           &copy; {new Date().getFullYear()}{" "}
           <span className="text-primary font-semibold">Munkai</span>. All rights
