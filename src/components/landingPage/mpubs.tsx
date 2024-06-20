@@ -32,7 +32,7 @@ const MunkaiPubs: React.FC = () => {
   ];
 
   return (
-    <section className="mx-auto mt-20">
+    <section className="mx-auto mt-20 px-6">
       <div className="flex justify-center items-center mb-10">
         <h1 className="text-lg font-bold">MUNKAI ART</h1>
       </div>

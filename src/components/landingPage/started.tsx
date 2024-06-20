@@ -43,7 +43,7 @@ const Started = () => {
   ];
 
   return (
-    <section className="mt-20">
+    <section className="mt-20 px-6">
       <div className="flex justify-center items-center">
         <h1 className="text-center font-bold mb-8">GETTING STARTED</h1>
       </div>
