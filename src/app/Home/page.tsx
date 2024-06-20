@@ -5,6 +5,7 @@ import Started from "@/components/landingPage/started";
 import Footer from "@/components/landingPage/footer";
 import MunkaiPubs from "@/components/landingPage/mpubs";
 import Info from "@/components/landingPage/info";
+import Guides from "@/components/landingPage/guides";
 
 function LandingPage() {
   return (
@@ -14,6 +15,7 @@ function LandingPage() {
       <Started />
       <MunkaiPubs />
       <Info />
+      <Guides />
       <Footer />
     </div>
   );
