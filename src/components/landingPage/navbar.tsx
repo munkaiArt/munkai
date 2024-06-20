@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="shadow-md">
+    <nav className="shadow-md bg-secondary py-2 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <Link href="/">
           <Image

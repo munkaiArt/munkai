@@ -5,9 +5,9 @@ const MunkaiCard: React.FC<{ title: string; description: string }> = ({
   description,
 }) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md w-full">
+    <div className="bg-card p-4 rounded-lg shadow-md w-full">
       <h2 className="text-lg font-semibold mb-2">{title}</h2>
-      <p className="text-gray-700">{description}</p>
+      <p className="">{description}</p>
     </div>
   );
 };
