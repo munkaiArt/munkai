@@ -72,7 +72,7 @@ const Started = () => {
           </Carousel>
         </div>
       ) : (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-center items-center gap-x-6">
           {carouselItems.map((item, index) => (
             <div key={index} className="mx-8 flex-shrink-0">
               <div className="flex flex-col items-center">
