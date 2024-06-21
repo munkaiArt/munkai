@@ -6,14 +6,23 @@ import {
   faWallet,
   faSun,
   faMoon,
+  faChevronDown,
+  faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
 import MunkaiLogoDark from "../../../public/images/monkai-logo-white.png";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "../ui/dropdown-menu";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // Placeholder functions for icon actions (e.g., toggle theme, open notifications, open wallet)
   const handleToggleTheme = () => {
@@ -39,7 +48,7 @@ const Header: React.FC = () => {
           />
         </Link>
 
-        <div className="hidden md:flex space-x-6 ">
+        <div className="hidden md:flex space-x-6">
           <Link
             href="/publications"
             className="hover:text-primary transition-all duration-500"
@@ -58,7 +67,46 @@ const Header: React.FC = () => {
           >
             Nft Marketplace
           </Link>
-          <div>dropdown</div>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className="hover:text-primary transition-all duration-500 outline-none"
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+            >
+              <div className="flex items-center">
+                App Settings
+                <FontAwesomeIcon
+                  icon={dropdownOpen ? faChevronUp : faChevronDown}
+                  className="ml-1"
+                />
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-secondary shadow-lg rounded-md">
+              <DropdownMenuItem>
+                <Link href="/admin/users">Users</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/admin/creators">Creators</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/admin/publications">Publications</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/admin/chapters">Chapters</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/admin/nfts">Nfts</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/admin/admins">Admins</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/admin/settings">Settings</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/admin/reports">Reports</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         <div className="hidden md:flex">
@@ -131,7 +179,7 @@ const Header: React.FC = () => {
                 NFT Marketplace
               </span>
             </Link>
-            <hr className="my-2 w-full border-t border-gray-300" />
+            <hr className="my-2 w-full border-t border-primary" />
             <div className="flex">
               <Button
                 variant={"transparent"}
@@ -160,6 +208,47 @@ const Header: React.FC = () => {
                 <FontAwesomeIcon icon={faWallet} className="h-5 w-5" />
               </Button>
             </div>
+            <hr className="my-2 w-full border-t border-primary" />
+            <Link href="/admin/users" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Users
+              </span>
+            </Link>
+            <Link href="/admin/creators" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Creators
+              </span>
+            </Link>
+            <Link href="/admin/publications" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Publications
+              </span>
+            </Link>
+            <Link href="/admin/chapters" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Chapters
+              </span>
+            </Link>
+            <Link href="/admin/nfts" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Nfts
+              </span>
+            </Link>
+            <Link href="/admin/admins" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Admins
+              </span>
+            </Link>
+            <Link href="/admin/settings" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Settings
+              </span>
+            </Link>
+            <Link href="/admin/reports" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Reports
+              </span>
+            </Link>
           </div>
         </div>
       )}
