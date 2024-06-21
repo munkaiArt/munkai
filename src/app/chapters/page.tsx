@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
 
-export default function Create() {
+export default function Chapter() {
   return (
-    <main className="bg-secondary p-8 rounded-lg">
+    <main className="p-8">
       <div>
         <div>
-          <h1 className="text-xl my-4">Create Page</h1>
+          <h1 className="text-xl my-4">Chapter Page</h1>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Consequuntur saepe aut, asperiores odio quibusdam rem ad eaque sunt

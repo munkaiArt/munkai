@@ -13,32 +13,32 @@ const SideBar: FC = () => {
     {
       title: "Profile",
       icon: <i className="fa fa-home"></i>,
-      link: "/dashboard/profile",
+      link: "/admin/profile",
     },
     {
       title: "Publications",
       icon: <i className="fa fa-envelope"></i>,
-      link: "/dashboard/publications",
+      link: "/admin/publications",
     },
     {
       title: "Chapters",
       icon: <i className="fa fa-info-circle"></i>,
-      link: "/dashboard/chapters",
+      link: "/admin/chapters",
     },
     {
       title: "MarketPlace",
       icon: <i className="fa fa-star"></i>,
-      link: "/dashboard/nft-marketplace",
+      link: "/admin/nft-marketplace",
     },
     {
       title: "Create",
       icon: <i className="fa fa-eye"></i>,
-      link: "/dashboard/create-publication",
+      link: "/admin/create-publication",
     },
     {
       title: "Settings",
       icon: <i className="fa fa-cog"></i>,
-      link: "/dashboard/settings",
+      link: "/admin/settings",
     },
   ];
 

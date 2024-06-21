@@ -10,7 +10,6 @@ import Guides from "@/components/landingPage/guides";
 function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
       <main className="flex-grow">
         <Hero />
         <Started />
@@ -18,7 +17,6 @@ function LandingPage() {
         <Info />
         <Guides />
       </main>
-      <Footer />
     </div>
   );
 }

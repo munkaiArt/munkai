@@ -1,12 +1,32 @@
+"use client";
 import React, { useState } from "react";
-import MunkaiLogo from "../../../public/images/munkai-logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBell,
+  faWallet,
+  faSun,
+  faMoon,
+} from "@fortawesome/free-solid-svg-icons";
 import MunkaiLogoDark from "../../../public/images/monkai-logo-white.png";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "../ui/button";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Placeholder functions for icon actions (e.g., toggle theme, open notifications, open wallet)
+  const handleToggleTheme = () => {
+    // Implement theme toggle logic
+  };
+
+  const handleOpenNotifications = () => {
+    // Implement notifications logic
+  };
+
+  const handleOpenWallet = () => {
+    // Implement wallet logic
+  };
 
   return (
     <nav className="shadow-md bg-secondary py-2 sticky top-0 z-50">
@@ -15,18 +35,66 @@ const Navbar = () => {
           <Image
             src={MunkaiLogoDark}
             alt="Logo"
-            className="h-6 w-24 md:h-8 md:w-32"
+            className="h-6 w-24 md:h-8 md:w-32 cursor-pointer"
           />
         </Link>
-        <div className="hidden md:flex space-x-6">
-          <Button>
-            <Link href="/signUp">Get Started</Link>
-          </Button>
-          {/* <Button variant={"outline2"}>
-            <Link href="/signIn">Sign In</Link>
-          </Button> */}
+
+        <div className="hidden md:flex space-x-6 ">
+          <Link
+            href="/publications"
+            className="hover:text-primary transition-all duration-500"
+          >
+            Publications
+          </Link>
+          <Link
+            href="/chapters"
+            className="hover:text-primary transition-all duration-500"
+          >
+            Chapters
+          </Link>
+          <Link
+            href="/nft-marketplace"
+            className="hover:text-primary transition-all duration-500"
+          >
+            Nft Marketplace
+          </Link>
         </div>
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+
+        <div className="hidden md:flex">
+          <Button
+            variant={"transparent"}
+            size={"icon"}
+            className="text-foreground hover:rounded-full"
+            onClick={handleToggleTheme}
+          >
+            <FontAwesomeIcon icon={faMoon} className="h-5 w-5" />
+          </Button>
+
+          <Button
+            variant={"transparent"}
+            size={"icon"}
+            className="text-foreground hover:rounded-full"
+            onClick={handleOpenNotifications}
+          >
+            <FontAwesomeIcon icon={faBell} className="h-5 w-5" />
+          </Button>
+
+          <Button
+            variant={"transparent"}
+            size={"icon"}
+            className="text-foreground hover:rounded-full"
+            onClick={handleOpenWallet}
+          >
+            <FontAwesomeIcon icon={faWallet} className="h-5 w-5" />
+          </Button>
+        </div>
+
+        {/* Hamburger menu for mobile */}
+        <button
+          className="md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle navigation"
+        >
           <svg
             className="h-6 w-6"
             fill="none"
@@ -42,14 +110,56 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
+
+      {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden">
-          <Link href="/signUp" className="block px-4 py-2">
-            Sign Up
-          </Link>
-          <Link href="/signIn" className="block px-4 py-2 ">
-            Log In
-          </Link>
+        <div className="absolute right-0 top-13 w-48 bg-secondary shadow-lg rounded-md transition-all duration-700 md:hidden">
+          <div className="flex flex-col items-start space-y-2 p-4">
+            <Link href="/publications" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Publications
+              </span>
+            </Link>
+            <Link href="/chapters" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Chapters
+              </span>
+            </Link>
+            <Link href="/nft-marketplace" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                NFT Marketplace
+              </span>
+            </Link>
+            <hr className="my-2 w-full border-t border-gray-300" />
+            <div className="flex">
+              <Button
+                variant={"transparent"}
+                size={"icon"}
+                className="text-foreground hover:rounded-full"
+                onClick={handleToggleTheme}
+              >
+                <FontAwesomeIcon icon={faMoon} className="h-5 w-5" />
+              </Button>
+
+              <Button
+                variant={"transparent"}
+                size={"icon"}
+                className="text-foreground hover:rounded-full"
+                onClick={handleOpenNotifications}
+              >
+                <FontAwesomeIcon icon={faBell} className="h-5 w-5" />
+              </Button>
+
+              <Button
+                variant={"transparent"}
+                size={"icon"}
+                className="text-foreground hover:rounded-full"
+                onClick={handleOpenWallet}
+              >
+                <FontAwesomeIcon icon={faWallet} className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
         </div>
       )}
     </nav>

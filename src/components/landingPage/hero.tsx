@@ -40,7 +40,7 @@ function Hero() {
           creators and fans with a free market for everyone.
         </p>
         <Button className="font-semibold mt-4" size={"lg"}>
-          <Link href={"/signUp"}>Get Started</Link>
+          <Link href={"/publications"}>Explore</Link>
         </Button>
       </div>
     </section>
