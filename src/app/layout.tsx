@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export type LayoutProps = { children: React.ReactNode };
 
 export default function RootLayout({ children }: LayoutProps) {
-  const isAdmin = true;
+  const isAdmin = false;
   return (
     <html lang="en">
       <body className={space_Grotesk.className}>
