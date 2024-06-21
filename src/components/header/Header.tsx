@@ -1,29 +1,169 @@
-import { FC } from "react";
+"use client";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBell,
+  faWallet,
+  faSun,
+  faMoon,
+} from "@fortawesome/free-solid-svg-icons";
+import MunkaiLogoDark from "../../../public/images/monkai-logo-white.png";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-const Header: FC = () => {
+const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Placeholder functions for icon actions (e.g., toggle theme, open notifications, open wallet)
+  const handleToggleTheme = () => {
+    // Implement theme toggle logic
+  };
+
+  const handleOpenNotifications = () => {
+    // Implement notifications logic
+  };
+
+  const handleOpenWallet = () => {
+    // Implement wallet logic
+  };
+
   return (
-    <header className="flex justify-between items-center px-4 py-4">
-      <div className="flex items-center">
-        <h1 className="mr-8 text-2xl font-bold">MunkaiArt</h1>
-        <input
-          type="text"
-          className="px-4 py-2 rounded-full bg-hover border border-input focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary min-w-[320px]"
-          placeholder="Search..."
-        />
-      </div>
-      <div className="flex items-center gap-x-6">
-        <Button className="font-semibold">Connect Wallet</Button>
-        <Link href="/dashboard/profile">
-          <img
-            src="https://imageio.forbes.com/specials-images/imageserve/6244c655b6ecfb569a31a3ba/John-Cena-performing-his-famous--You-Can-t-See-Me--taunt-/0x0.jpg?format=jpg&crop=1200,675,x0,y0,safe&width=960"
-            alt="avatar"
-            className="w-10 h-10 rounded-full"
+    <nav className="shadow-md bg-secondary py-2 sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+        <Link href="/">
+          <Image
+            src={MunkaiLogoDark}
+            alt="Logo"
+            className="h-6 w-24 md:h-8 md:w-32 cursor-pointer"
           />
         </Link>
+
+        <div className="hidden md:flex space-x-6 ">
+          <Link
+            href="/publications"
+            className="hover:text-primary transition-all duration-500"
+          >
+            Publications
+          </Link>
+          <Link
+            href="/chapters"
+            className="hover:text-primary transition-all duration-500"
+          >
+            Chapters
+          </Link>
+          <Link
+            href="/nft-marketplace"
+            className="hover:text-primary transition-all duration-500"
+          >
+            Nft Marketplace
+          </Link>
+          <div>dropdown</div>
+        </div>
+
+        <div className="hidden md:flex">
+          <Button
+            variant={"transparent"}
+            size={"icon"}
+            className="text-foreground hover:rounded-full"
+            onClick={handleToggleTheme}
+          >
+            <FontAwesomeIcon icon={faMoon} className="h-5 w-5" />
+          </Button>
+
+          <Button
+            variant={"transparent"}
+            size={"icon"}
+            className="text-foreground hover:rounded-full"
+            onClick={handleOpenNotifications}
+          >
+            <FontAwesomeIcon icon={faBell} className="h-5 w-5" />
+          </Button>
+
+          <Button
+            variant={"transparent"}
+            size={"icon"}
+            className="text-foreground hover:rounded-full"
+            onClick={handleOpenWallet}
+          >
+            <FontAwesomeIcon icon={faWallet} className="h-5 w-5" />
+          </Button>
+        </div>
+
+        {/* Hamburger menu for mobile */}
+        <button
+          className="md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle navigation"
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+            />
+          </svg>
+        </button>
       </div>
-    </header>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <div className="absolute right-0 top-13 w-48 bg-secondary shadow-lg rounded-md transition-all duration-700 md:hidden">
+          <div className="flex flex-col items-start space-y-2 p-4">
+            <Link href="/publications" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Publications
+              </span>
+            </Link>
+            <Link href="/chapters" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                Chapters
+              </span>
+            </Link>
+            <Link href="/nft-marketplace" passHref>
+              <span className="hover:text-primary transition-all duration-500">
+                NFT Marketplace
+              </span>
+            </Link>
+            <hr className="my-2 w-full border-t border-gray-300" />
+            <div className="flex">
+              <Button
+                variant={"transparent"}
+                size={"icon"}
+                className="text-foreground hover:rounded-full"
+                onClick={handleToggleTheme}
+              >
+                <FontAwesomeIcon icon={faMoon} className="h-5 w-5" />
+              </Button>
+
+              <Button
+                variant={"transparent"}
+                size={"icon"}
+                className="text-foreground hover:rounded-full"
+                onClick={handleOpenNotifications}
+              >
+                <FontAwesomeIcon icon={faBell} className="h-5 w-5" />
+              </Button>
+
+              <Button
+                variant={"transparent"}
+                size={"icon"}
+                className="text-foreground hover:rounded-full"
+                onClick={handleOpenWallet}
+              >
+                <FontAwesomeIcon icon={faWallet} className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
 

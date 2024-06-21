@@ -5,7 +5,7 @@ import BookCard from "@/components/cards/BookCard";
 import { books } from "@/constants/mockData";
 import Link from "next/link";
 
-const Dashboard: FC = () => {
+const Publications: FC = () => {
   return (
     <main className="p-8">
       <div className="mb-8">
@@ -28,4 +28,4 @@ const Dashboard: FC = () => {
   );
 };
 
-export default Dashboard;
+export default Publications;

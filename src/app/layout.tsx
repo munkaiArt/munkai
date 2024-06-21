@@ -4,6 +4,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/landingPage/navbar";
 import Footer from "@/components/landingPage/footer";
+import Header from "@/components/header/Header";
 
 const space_Grotesk = Space_Grotesk({
   weight: "400",
@@ -17,10 +18,11 @@ export const metadata: Metadata = {
 export type LayoutProps = { children: React.ReactNode };
 
 export default function RootLayout({ children }: LayoutProps) {
+  const isAdmin = false;
   return (
     <html lang="en">
       <body className={space_Grotesk.className}>
-        <Navbar />
+        {isAdmin ? <Header /> : <Navbar />}
         {children}
         <Footer />
       </body>

@@ -5,15 +5,15 @@ import BookCard from "@/components/cards/BookCard";
 import { books } from "@/constants/mockData";
 import Link from "next/link";
 
-const Dashboard: FC = () => {
+const AllPubs: FC = () => {
   return (
-    <main className="bg-secondary p-8 rounded-lg">
+    <main className="p-8">
       <div className="mb-8">
         <h1 className="text-2xl font-bold mb-4">ALL PUBLICATIONS</h1>
         <ul className="flex flex-row flex-wrap items-center justify-center">
           {books.map((book) => (
             <li key={book.id}>
-              <Link href={`/dashboard/book/${book.id}`}>
+              <Link href={`/book/${book.id}`}>
                 <BookCard
                   title={book.title}
                   coverImage={book.image}
@@ -28,4 +28,4 @@ const Dashboard: FC = () => {
   );
 };
 
-export default Dashboard;
+export default AllPubs;
