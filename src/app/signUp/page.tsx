@@ -2,7 +2,6 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import SignUpForm from "@/components/modals/signUp";
 import BackgroundImage from "../../../public/images/imag4.png";
-import Link from "next/link";
 
 function SignUpPage() {
   return (
