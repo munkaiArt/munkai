@@ -20,10 +20,10 @@ const Navbar = () => {
         </Link>
         <div className="hidden md:flex space-x-6">
           <Button>
-            <Link href="#">Sign Up</Link>
+            <Link href="/signUp">Sign Up</Link>
           </Button>
           <Button variant={"outline2"}>
-            <Link href="#">Sign In</Link>
+            <Link href="/signIn">Sign In</Link>
           </Button>
         </div>
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -44,10 +44,10 @@ const Navbar = () => {
       </div>
       {isOpen && (
         <div className="md:hidden">
-          <Link href="#started" className="block px-4 py-2">
+          <Link href="/signUp" className="block px-4 py-2">
             Sign Up
           </Link>
-          <Link href="#info" className="block px-4 py-2 ">
+          <Link href="/signIn" className="block px-4 py-2 ">
             Log In
           </Link>
         </div>
