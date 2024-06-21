@@ -45,7 +45,9 @@ const Started = () => {
   return (
     <section className="mt-20 px-6">
       <div className="flex justify-center items-center">
-        <h1 className="text-center font-bold mb-8">GETTING STARTED</h1>
+        <h1 className="heading text-center mt-10 mb-6 text-2xl font-bold">
+          Getting Started
+        </h1>
       </div>
 
       {viewportWidth < 768 ? (

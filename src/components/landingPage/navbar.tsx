@@ -20,11 +20,11 @@ const Navbar = () => {
         </Link>
         <div className="hidden md:flex space-x-6">
           <Button>
-            <Link href="/signUp">Sign Up</Link>
+            <Link href="/signUp">Get Started</Link>
           </Button>
-          <Button variant={"outline2"}>
+          {/* <Button variant={"outline2"}>
             <Link href="/signIn">Sign In</Link>
-          </Button>
+          </Button> */}
         </div>
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           <svg

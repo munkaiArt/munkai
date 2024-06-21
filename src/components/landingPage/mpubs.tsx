@@ -34,7 +34,9 @@ const MunkaiPubs: React.FC = () => {
   return (
     <section className="mx-auto mt-20 px-6">
       <div className="flex justify-center items-center mb-10">
-        <h1 className="text-lg font-bold">MUNKAI ART</h1>
+        <h1 className="heading text-center mt-10 mb-6 text-2xl font-bold">
+          Top Publications
+        </h1>
       </div>
 
       {viewportWidth < 768 ? (

@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import SignUpForm from "@/components/modals/signUp";
 import BackgroundImage from "../../../public/images/imag4.png";
+import Link from "next/link";
 
 function SignUpPage() {
   return (
@@ -11,8 +12,14 @@ function SignUpPage() {
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <Card className="relative rounded-lg shadow-lg p-8 max-w-md w-full">
-        <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
+        <h2 className="text-2xl font-bold text-center mb-6">GET STARTED</h2>
         <SignUpForm />
+        <div className="text-center text-xs text-secondary-foreground mt-4">
+          Already on Munkai?{" "}
+          <Link href="/signIn" className="font-bold text-primary">
+            Log in
+          </Link>
+        </div>
       </Card>
     </div>
   );
