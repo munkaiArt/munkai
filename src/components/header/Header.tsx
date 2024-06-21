@@ -22,7 +22,6 @@ import {
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // Placeholder functions for icon actions (e.g., toggle theme, open notifications, open wallet)
   const handleToggleTheme = () => {
@@ -68,17 +67,8 @@ const Header: React.FC = () => {
             Nft Marketplace
           </Link>
           <DropdownMenu>
-            <DropdownMenuTrigger
-              className="hover:text-primary transition-all duration-500 outline-none"
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-            >
-              <div className="flex items-center">
-                App Settings
-                <FontAwesomeIcon
-                  icon={dropdownOpen ? faChevronUp : faChevronDown}
-                  className="ml-1"
-                />
-              </div>
+            <DropdownMenuTrigger className="hover:text-primary transition-all duration-500 outline-none">
+              <div className="flex items-center">App Settings</div>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-secondary shadow-lg rounded-md">
               <DropdownMenuItem>
