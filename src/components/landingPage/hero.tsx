@@ -24,7 +24,7 @@ function Hero() {
     <section
       className="relative bg-cover bg-center h-screen md:px-6 flex items-center justify-center transition-all duration-1000"
       style={{
-        height: "85vh",
+        height: "90vh",
         backgroundImage: `linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url(${backgroundImages[imageIndex]})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",

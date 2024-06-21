@@ -7,15 +7,13 @@ import Guides from "@/components/landingPage/guides";
 
 function LandingPage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
-        <Hero />
-        <Started />
-        <MunkaiPubs />
-        <Info />
-        <Guides />
-      </main>
-    </div>
+    <main className="flex-grow">
+      <Hero />
+      <Started />
+      <MunkaiPubs />
+      <Info />
+      <Guides />
+    </main>
   );
 }
 
