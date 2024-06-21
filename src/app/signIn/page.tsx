@@ -13,7 +13,7 @@ function SignInPage() {
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <Card className="relative rounded-lg shadow-lg p-8 max-w-md w-full">
         <h2 className="text-2xl font-bold text-center mb-6">
-          HI! WELCOME BACK
+          Hello [name], please sign in to access your admin rights.
         </h2>
         <SignInForm />
         <div className="w-full mt-4 text-xs">
@@ -21,13 +21,6 @@ function SignInPage() {
             Forgot your password?&nbsp;
             <Link className="text-primary font-bold" href="/forgot-password">
               Reset Password
-            </Link>
-          </p>
-
-          <p className="flex justify-center items-center text-secondary-foreground mt-1">
-            If you don&apos;t have an account, please&nbsp;
-            <Link className="text-primary font-bold" href="/signUp">
-              Sign up
             </Link>
           </p>
         </div>
