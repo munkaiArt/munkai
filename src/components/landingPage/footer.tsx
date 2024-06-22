@@ -4,7 +4,7 @@ import MunkaiLogoDark from "../../../public/images/monkai-logo-white.png";
 import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "../modals/contact";
-import SignInForm from "../modals/signIn";
+import ForgotPasswordForm from "../modals/forgotPassword";
 
 const Footer: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      {open && <SignInForm closeModal={() => setOpen(false)} />}
+      {open && <ForgotPasswordForm closeModal={() => setOpen(false)} />}
 
       <section className="bg-secondary mt-20 border-t-2 border-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
