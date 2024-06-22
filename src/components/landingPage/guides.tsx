@@ -12,6 +12,7 @@ const Guides: React.FC = () => {
             margin-left: auto;
             margin-right: auto;
             max-width: 1000px;
+            border-radius: 20px;
           }
 
           .video-container::after {
