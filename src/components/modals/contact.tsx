@@ -32,7 +32,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ closeModal }) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 transition-opacity bg-black dark:bg-opacity-50">
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 transition-opacity bg-black">
       <FormProvider {...methods}>
         <Card className="relative rounded-lg shadow-lg p-8 max-w-md w-full">
           <button
