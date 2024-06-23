@@ -20,6 +20,17 @@ const publications = [
   { label: "Blogs", value: "5" },
 ];
 
+const status = [
+  { label: "New", value: "1" },
+  { label: "Trending", value: "2" },
+  { label: "Top Artists", value: "3" },
+];
+
+const alphabetical = [
+  { label: "Ascending", value: "1" },
+  { label: "Deecending", value: "2" },
+];
+
 const Publications: FC = () => {
   const handlePublicationChange = () => {
     // logic here
@@ -40,15 +51,44 @@ const Publications: FC = () => {
             onChange={handlePublicationChange}
             classname="border-none"
           /> */}
-          {publications.map((publication) => (
-            <div
-              key={publication.value}
-              className="flex items-center space-x-2"
-            >
-              <Checkbox />
-              <label>{publication.label}</label>
-            </div>
-          ))}
+          <div className="mb-4">
+            <h4 className="font-semibold my-2 text-sm">Alphabetically</h4>
+            {alphabetical.map((publication) => (
+              <div
+                key={publication.value}
+                className="flex items-center space-x-2"
+              >
+                <Checkbox />
+                <label>{publication.label}</label>
+              </div>
+            ))}
+          </div>
+
+          <div className="mb-4">
+            <h4 className="font-semibold my-2 text-sm">By Status</h4>
+            {status.map((publication) => (
+              <div
+                key={publication.value}
+                className="flex items-center space-x-2"
+              >
+                <Checkbox />
+                <label>{publication.label}</label>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <h4 className="font-semibold my-2 text-sm">By Literature</h4>
+            {publications.map((publication) => (
+              <div
+                key={publication.value}
+                className="flex items-center space-x-2"
+              >
+                <Checkbox />
+                <label>{publication.label}</label>
+              </div>
+            ))}
+          </div>
         </div>
         <ul className="flex flex-row flex-wrap items-center justify-center flex-grow overflow-y-auto custom-scrollbar h-[80vh]">
           {books.map((book) => (

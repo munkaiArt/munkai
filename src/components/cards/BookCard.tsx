@@ -11,13 +11,13 @@ interface BookCardProps {
 const BookCard: FC<BookCardProps> = ({ title, coverImage, onClick }) => {
   return (
     <div
-      className="w-48 p-4 m-3 rounded-md bg-background shadow-md cursor-pointer hover:scale-105 transition-all duration-1000"
+      className="w-48 p-4 m-3 rounded-md bg-background shadow-md cursor-pointer group"
       onClick={onClick}
     >
       <img
         src={coverImage}
         alt={title}
-        className="w-full aspect-square rounded-md"
+        className="w-full aspect-square rounded-md transition-all duration-1000 group-hover:scale-105"
       />
       <div className="mt-4">
         <h3 className="text-lg font-bold text-primary">{title}</h3>
