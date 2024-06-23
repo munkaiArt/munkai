@@ -33,7 +33,7 @@ const SelectItem = React.forwardRef<
     ref={ref}
     value={value}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-hover focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-hover focus:text-primary data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     onClick={(event) => {
@@ -124,6 +124,7 @@ const MultiSelectDropdown = ({
               value={option.value}
               checked={selectedItems.includes(option.value)}
               onItemSelect={handleSelectChange}
+              className="flex flex-wrap gap-2"
             >
               {option.label}
             </SelectItem>
