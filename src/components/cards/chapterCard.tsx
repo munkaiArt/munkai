@@ -12,7 +12,7 @@ interface BookCardProps {
 const ChapterCard: FC<BookCardProps> = ({ title, coverImage, onClick }) => {
   return (
     <div
-      className="w-48 p-4 m-3 rounded-md bg-background shadow-md cursor-pointer group"
+      className="w-48 p-4 m-3 rounded-md bg-secondary shadow-md cursor-pointer group"
       onClick={onClick}
     >
       <img
