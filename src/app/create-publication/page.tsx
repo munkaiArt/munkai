@@ -66,12 +66,12 @@ const Publications: React.FC<CreateFormProps> = () => {
   };
 
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto p-8 h-screen">
       <h1 className="text-2xl font-bold mb-4 mt-4 uppercase">
         Create a new Publications
       </h1>
       <p className="text-sm font-semibold">Upload a cover photo: 5mb max</p>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="flex-1">Upload Image</div>
         <div className="flex-1 border-2 border-primary rounded-md p-6">
           <FormProvider {...methods}>
