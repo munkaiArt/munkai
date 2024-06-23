@@ -44,7 +44,7 @@ const Publications: FC = () => {
       <h1 className="text-2xl text-center font-bold mb-4 md:mb-10">
         EXPLORE PUBLICATIONS
       </h1>
-      <div className="md:hidden flex justify-between mb-4">
+      <div className="md:hidden flex justify-between mb-2 md:mb-4">
         <button
           className="md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
