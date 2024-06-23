@@ -27,7 +27,7 @@ const Publications: FC = () => {
 
   return (
     <main className="p-8">
-      <h1 className="text-2xl text-center font-bold mb-4">
+      <h1 className="text-2xl text-center font-bold mb-4 md:mb-10">
         EXPLORE PUBLICATIONS
       </h1>
       <div className="flex justify-center gap-x-2 mb-8">
