@@ -22,7 +22,7 @@ const BookCard: FC<BookCardProps> = ({ title, coverImage, onClick }) => {
       <div className="mt-4">
         <h3 className="text-lg font-bold text-primary">{title}</h3>
         <div className="flex items-center justify-between mt-3">
-          <p className="text-sm">Chapters: 0</p>
+          <p className="text-sm">0 chapters</p>
           <FontAwesomeIcon icon={faBookmark} className="h-3.5 w-3.5" />
         </div>
       </div>

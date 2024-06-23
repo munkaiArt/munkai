@@ -53,7 +53,7 @@ const Publications: FC = () => {
         <ul className="flex flex-row flex-wrap items-center justify-center flex-grow overflow-y-auto custom-scrollbar h-[80vh]">
           {books.map((book) => (
             <li key={book.id}>
-              <Link href={`/read/${book.id}`}>
+              <Link href={`/publications/${book.id}`}>
                 <BookCard title={book.title} coverImage={book.image} />
               </Link>
             </li>
