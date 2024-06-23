@@ -18,7 +18,6 @@ import {
   SelectTrigger,
   SelectContent,
   SelectItem,
-  SelectSeparator,
   SelectGroup,
   SelectLabel,
   SelectValue,
@@ -47,8 +46,6 @@ const genres = [
   { label: "HORROR", value: "11" },
 ];
 
-const chapterCount = ["Option 1", "Option 2", "Option 3"];
-
 const Publications: React.FC<CreateFormProps> = () => {
   const methods = useForm<CreateFormValues>();
   const onSubmit: SubmitHandler<CreateFormValues> = (data) => {
@@ -57,12 +54,6 @@ const Publications: React.FC<CreateFormProps> = () => {
 
   const handleGenreSelect = () => {
     // logic here
-  };
-
-  const [selectedOption, setSelectedOption] = useState("");
-
-  const handleSelectOption = (option: string) => {
-    setSelectedOption(option);
   };
 
   return (
