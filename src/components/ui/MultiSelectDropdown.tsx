@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { cn } from "@/lib/utils";
 import { useController, Control } from "react-hook-form";
-
 import { SelectContent, SelectTrigger } from "./select";
 import { Input } from "./input";
+import { Checkbox } from "./checkbox";
 
 export interface Option {
   value: string;
@@ -17,9 +17,9 @@ interface MultiSelectDropdownProps {
   options: Option[];
   onChange: (selectedItems: any) => void;
   defaultOpen?: boolean;
-  multiValue?:boolean;
+  multiValue?: boolean;
   label?: string;
-  classname?: string
+  classname?: string;
 }
 
 const SelectItem = React.forwardRef<
@@ -43,15 +43,7 @@ const SelectItem = React.forwardRef<
     {...props}
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-      <Input
-        type="checkbox"
-        checked={checked}
-        className="form-checkbox text-primary"
-        onChange={(e: any) => {
-          e.stopPropagation();
-          onItemSelect(value);
-        }}
-      />
+      <Checkbox />
     </span>
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
@@ -65,7 +57,7 @@ const MultiSelectDropdown = ({
   defaultOpen = false,
   multiValue,
   label,
-  classname
+  classname,
 }: MultiSelectDropdownProps) => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -80,20 +72,19 @@ const MultiSelectDropdown = ({
   };
 
   const handleSelectChange = (value: string) => {
-    if(multiValue){
+    if (multiValue) {
       const updatedSelection = selectedItems.includes(value)
-      ? selectedItems.filter((item) => item !== value)
-      : [...selectedItems, value];
-    setSelectedItems(updatedSelection);
+        ? selectedItems.filter((item) => item !== value)
+        : [...selectedItems, value];
+      setSelectedItems(updatedSelection);
       onChange(value);
-    }else {
+    } else {
       const updatedSelection = selectedItems.includes(value)
-      ? selectedItems.filter((item) => item !== value)
-      : [...selectedItems, value];
-    setSelectedItems(updatedSelection);
-    onChange(updatedSelection);
+        ? selectedItems.filter((item) => item !== value)
+        : [...selectedItems, value];
+      setSelectedItems(updatedSelection);
+      onChange(updatedSelection);
     }
-   
   };
 
   const handleClickOutside = useCallback(
@@ -119,7 +110,7 @@ const MultiSelectDropdown = ({
   return (
     <SelectPrimitive.Root open={isOpen}>
       <SelectTrigger
-        className={`border-2 border-primary bg-secondary py-5 pr-4 pl-6 w-full  focus:ring-2 focus:ring-primary focus:border-transparent ${classname}`}
+        className={`border-2 border-primary bg-hover py-5 pr-4 pl-6 w-full focus:ring-0 outline-none focus:border-primary ${classname}`}
         onClick={toggleDropdown}
       >
         {label}
