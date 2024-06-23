@@ -16,7 +16,7 @@ function PublicationChapters() {
   return (
     <main className="p-8">
       <h1 className="text-2xl text-center font-bold mb-4 md:mb-10">
-        PUBLICATIONS DETAILS
+        PUBLICATIONS CHAPTERS
       </h1>
       <ul className="flex flex-row flex-wrap items-center justify-center flex-grow">
         {books.map((book) => (
