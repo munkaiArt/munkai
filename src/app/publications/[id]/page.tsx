@@ -21,7 +21,7 @@ function PublicationChapters() {
       <ul className="flex flex-row flex-wrap items-center justify-center flex-grow">
         {books.map((book) => (
           <li key={book.id}>
-            <Link href={`/read/${book.id}`}>
+            <Link href={`/publications/chapter-details/${book.id}`}>
               <ChapterCard title={book.title} coverImage={book.image} />
             </Link>
           </li>
