@@ -59,11 +59,11 @@ const Publications: React.FC<CreateFormProps> = () => {
 
   return (
     <div className="container mx-auto p-8 h-screen">
-      <h1 className="text-2xl font-bold my-8 uppercase">
+      <h1 className="text-2xl font-bold my-8 uppercase text-center">
         Create your Publication
       </h1>
-      <div className="flex flex-col md:flex-row justify-center">
-        <div className="flex-1 mb-6 md:mb-0">
+      <Card className="bg-transparent md:bg-secondary shadow-none border-none flex flex-col md:flex-row items-center justify-center md:gap-x-10 max-w-3xl mx-auto p-12 md:p-8">
+        <div className="mb-6 md:mb-0">
           <p className="text-sm font-semibold mb-4">
             Upload a cover photo: 5mb max
           </p>
@@ -84,7 +84,7 @@ const Publications: React.FC<CreateFormProps> = () => {
             />
           </label>
         </div>
-        <div className="flex-1 border-2 border-primary rounded-md p-6">
+        <div className="border-2 border-primary rounded-md p-6">
           <FormProvider {...methods}>
             <form action="/submit_publication" method="post">
               <FormField
@@ -154,7 +154,7 @@ const Publications: React.FC<CreateFormProps> = () => {
             </form>
           </FormProvider>
         </div>
-      </div>
+      </Card>
     </div>
   );
 };
