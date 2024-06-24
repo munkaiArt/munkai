@@ -1,4 +1,5 @@
 "use client";
+import ComingSoon from "@/components/coming-soon/coming-soon";
 import React from "react";
 
 export default function MarketPlace() {
@@ -6,7 +7,7 @@ export default function MarketPlace() {
     <main className="p-8">
       <div>
         <div>
-          <h1 className="text-xl my-4">Market Place</h1>
+          <ComingSoon />
         </div>
       </div>
     </main>
