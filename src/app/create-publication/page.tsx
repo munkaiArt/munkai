@@ -22,6 +22,7 @@ import {
   SelectLabel,
   SelectValue,
 } from "../../components/ui/select";
+import { UploadCloud } from "lucide-react";
 
 type CreateFormValues = {
   name: string;
@@ -58,12 +59,31 @@ const Publications: React.FC<CreateFormProps> = () => {
 
   return (
     <div className="container mx-auto p-8 h-screen">
-      <h1 className="text-2xl font-bold mb-4 mt-4 uppercase">
-        Create a new Publications
+      <h1 className="text-2xl font-bold my-8 uppercase">
+        Create your Publication
       </h1>
-      <p className="text-sm font-semibold">Upload a cover photo: 5mb max</p>
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        <div className="flex-1">Upload Image</div>
+      <div className="flex flex-col md:flex-row justify-center">
+        <div className="flex-1 mb-6 md:mb-0">
+          <p className="text-sm font-semibold mb-4">
+            Upload a cover photo: 5mb max
+          </p>
+          <label
+            htmlFor="cover-upload"
+            className="w-48 h-48 bg-hover rounded-md flex flex-col items-center justify-center cursor-pointer hover:bg-primary-foreground transition-all duration-500"
+          >
+            <UploadCloud className="w-12 h-12 text-primary" />
+            <span className="text-primary font-semibold">Upload Cover</span>
+            <input
+              id="cover-upload"
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => {
+                // handle file upload
+              }}
+            />
+          </label>
+        </div>
         <div className="flex-1 border-2 border-primary rounded-md p-6">
           <FormProvider {...methods}>
             <form action="/submit_publication" method="post">
@@ -75,8 +95,9 @@ const Publications: React.FC<CreateFormProps> = () => {
                     <FormLabel>Publication Name</FormLabel>
                     <FormControl>
                       <Input
-                        value="A Million To One"
+                        placeholder="Publication title"
                         className="border-none bg-hover focus-visible:ring-0 font-semibold"
+                        {...field}
                       />
                     </FormControl>
                     <FormMessage />
@@ -93,7 +114,7 @@ const Publications: React.FC<CreateFormProps> = () => {
                       <SelectLabel>Select type</SelectLabel>
                       <SelectItem value="comic">Comic</SelectItem>
                       <SelectItem value="book">Book</SelectItem>
-                      <SelectItem value="poem">Peom</SelectItem>
+                      <SelectItem value="poem">Poem</SelectItem>
                       <SelectItem value="article">Article</SelectItem>
                       <SelectItem value="blog">Blog</SelectItem>
                     </SelectGroup>
@@ -112,7 +133,7 @@ const Publications: React.FC<CreateFormProps> = () => {
                 control={methods.control}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Decription</FormLabel>
+                    <FormLabel>Publication summary</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Summary of your Publication"
