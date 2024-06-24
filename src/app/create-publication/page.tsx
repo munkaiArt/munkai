@@ -64,8 +64,9 @@ const Publications: React.FC<CreateFormProps> = () => {
       </h1>
       <Card className="bg-transparent md:bg-secondary shadow-none border-none flex flex-col md:flex-row items-center justify-center md:gap-x-10 max-w-3xl mx-auto p-12 md:p-8">
         <div className="mb-6 md:mb-0">
-          <p className="text-sm font-semibold mb-4">
-            Upload a cover photo: 5mb max
+          <p className="text-sm font-semibold">Upload a cover photo: 5mb max</p>
+          <p className="text-xs text-primary font-semibold mb-4">
+            Uploads are png, jpeg, svg.
           </p>
           <label
             htmlFor="cover-upload"
