@@ -78,17 +78,17 @@ const TopArtists: React.FC = () => {
                 <div className="p-1">
                   <Link href={"#"}>
                     <Card className="bg bg-secondary border-none">
-                      <CardContent className="flex items-center justify-center p-4">
-                        <span className="text-2xl font-semibold">
+                      <CardContent className="flex flex-col items-center justify-center p-4">
+                        <div className="flex items-center justify-center border-2 border-primary rounded-full h-11 w-11">
                           <Image
                             src={topArtist.image}
                             alt={topArtist.username}
-                            className="w-14 h-14 rounded-full"
+                            className="w-12 h-12"
                           />
-                          <p className="text-sm font-semibold">
-                            {topArtist.username}
-                          </p>
-                        </span>
+                        </div>
+                        <p className="text-sm font-semibold mt-2">
+                          {topArtist.username}
+                        </p>
                       </CardContent>
                     </Card>
                   </Link>
