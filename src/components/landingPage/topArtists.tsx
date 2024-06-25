@@ -18,36 +18,44 @@ import Image from "next/image";
 interface TopArtist {
   image: string | any;
   username: string;
+  publications: number;
 }
 
 const TopArtistsData: TopArtist[] = [
   {
     image: profileImage,
     username: "@halfdobis",
+    publications: 42,
   },
   {
     image: profileImage,
     username: "@eugene",
+    publications: 12,
   },
   {
     image: profileImage,
     username: "@jia-ayo",
+    publications: 62,
   },
   {
     image: profileImage,
     username: "@halfdobis",
+    publications: 13,
   },
   {
     image: profileImage,
     username: "@eugene",
+    publications: 52,
   },
   {
     image: profileImage,
     username: "@jia-ayo",
+    publications: 17,
   },
   {
     image: profileImage,
     username: "@halfdobis",
+    publications: 100,
   },
 ];
 
@@ -64,7 +72,7 @@ const TopArtists: React.FC = () => {
       </div>
       <div className="flex justify-center">
         <Carousel
-          className="w-full max-w-sm md:max-w-lg"
+          className="w-full max-w-sm md:max-w-xl"
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
@@ -73,22 +81,27 @@ const TopArtists: React.FC = () => {
             {TopArtistsData.map((topArtist, index) => (
               <CarouselItem
                 key={index}
-                className="pl-1 md:basis-1/2 lg:basis-1/3"
+                className="pl-1 md:basis-1/2 lg:basis-2/5"
               >
                 <div className="p-1">
                   <Link href={"#"}>
                     <Card className="bg bg-secondary border-none">
-                      <CardContent className="flex flex-col items-center justify-center p-4">
+                      <CardContent className="flex items-center justify-center gap-x-4 p-4">
                         <div className="flex items-center justify-center border-2 border-primary rounded-full h-11 w-11">
                           <Image
                             src={topArtist.image}
                             alt={topArtist.username}
-                            className="w-12 h-12"
+                            className="w-12 h-12 bg-hover rounded-full"
                           />
                         </div>
-                        <p className="text-sm font-semibold mt-2">
-                          {topArtist.username}
-                        </p>
+                        <div>
+                          <p className="text-sm font-semibold text-primary">
+                            {topArtist.username}
+                          </p>
+                          <p className="text-xs font-normal">
+                            {topArtist.publications} Publications
+                          </p>
+                        </div>
                       </CardContent>
                     </Card>
                   </Link>
