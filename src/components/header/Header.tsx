@@ -32,7 +32,7 @@ const Header: React.FC = () => {
     // Implement notifications logic
   };
 
-  const handleOpenWallet = () => {
+  const handleConnectWallet = () => {
     // Implement wallet logic
   };
 
@@ -76,6 +76,9 @@ const Header: React.FC = () => {
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link href="/admin/creators">Creators</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/admin/topArtists">Top Artists</Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link href="/admin/publications">Publications</Link>
@@ -122,7 +125,7 @@ const Header: React.FC = () => {
             variant={"transparent"}
             size={"icon"}
             className="text-foreground hover:rounded-full"
-            onClick={handleOpenWallet}
+            onClick={handleConnectWallet}
           >
             <FontAwesomeIcon icon={faWallet} className="h-5 w-5" />
           </Button>
@@ -193,7 +196,7 @@ const Header: React.FC = () => {
                 variant={"transparent"}
                 size={"icon"}
                 className="text-foreground hover:rounded-full"
-                onClick={handleOpenWallet}
+                onClick={handleConnectWallet}
               >
                 <FontAwesomeIcon icon={faWallet} className="h-5 w-5" />
               </Button>
@@ -207,6 +210,11 @@ const Header: React.FC = () => {
             <Link href="/admin/creators" passHref>
               <span className="hover:text-primary transition-all duration-500">
                 Creators
+              </span>
+            </Link>
+            <Link href="/admin/topArtists">
+              <span className="hover:text-primary transition-all duration-500">
+                Top Artists
               </span>
             </Link>
             <Link href="/admin/publications" passHref>
