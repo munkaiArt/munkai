@@ -41,8 +41,8 @@ function UserProfile() {
             <p className="text-base font-semibold text-primary">@munkai</p>
             <p className="text-sm mt-1">124 Publications | 3890 Chapters</p>
           </div>
-          <Button className="ml-auto font-semibold mt-2">
-            Become a creator
+          <Button size={"lg"} className="ml-auto font-semibold mt-2">
+            Create
           </Button>
         </div>
         <div className="mt-10 max-w-7xl mx-auto flex items-center justify-between">
