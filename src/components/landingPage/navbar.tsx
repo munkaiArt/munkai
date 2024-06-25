@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
     // Implement notifications logic
   };
 
-  const handleOpenWallet = () => {
+  const handleConnectWallet = () => {
     // Implement wallet logic
   };
 
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
             variant={"transparent"}
             size={"icon"}
             className="text-foreground hover:rounded-full"
-            onClick={handleOpenWallet}
+            onClick={handleConnectWallet}
           >
             <FontAwesomeIcon icon={faWallet} className="h-5 w-5" />
           </Button>
@@ -154,7 +154,7 @@ const Navbar: React.FC = () => {
                 variant={"transparent"}
                 size={"icon"}
                 className="text-foreground hover:rounded-full"
-                onClick={handleOpenWallet}
+                onClick={handleConnectWallet}
               >
                 <FontAwesomeIcon icon={faWallet} className="h-5 w-5" />
               </Button>
