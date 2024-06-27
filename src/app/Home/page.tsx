@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "@/components/landingPage/hero";
 import Started from "@/components/landingPage/started";
-import TopArtists from "@/components/landingPage/topArtists";
+import TopCreators from "@/components/landingPage/topCreators";
 import Info from "@/components/landingPage/info";
 import Guides from "@/components/landingPage/guides";
 
@@ -10,8 +10,8 @@ function LandingPage() {
     <main className="flex-grow">
       <Hero />
       <Started />
-      <TopArtists />
       <Info />
+      <TopCreators />
       <Guides />
     </main>
   );
