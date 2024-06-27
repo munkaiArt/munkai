@@ -31,7 +31,7 @@ function ChapterDetails() {
             risus ac dolor condimentum, ut rhoncus.
           </p>
           <div className="flex items-center justify-center md:justify-start mt-6 space-x-3">
-            <span className="bg-card px-4 py-2 rounded-md">20 BU$D</span>
+            <span className="bg-card px-4 py-2 rounded-md">20 U$DT</span>
             <Button>Collect</Button>
           </div>
         </div>
