@@ -13,6 +13,7 @@ import {
 } from "../ui/form";
 import Link from "next/link";
 import { Card } from "../ui/card";
+import { Checkbox } from "../ui/checkbox";
 
 type SignUpFormValues = {
   email: string;
@@ -77,6 +78,19 @@ const SignUpForm: React.FC<SignUpFormProps> = ({ closeModal }) => {
                 </FormItem>
               )}
             />
+            <div className="flex items-center justify-center space-x-2 mt-4">
+              <Checkbox />
+              <p className="text-sm">
+                I agree to Munkai's{" "}
+                <Link
+                  href={"/terms-and-conditions"}
+                  className="text-primary font-semibold"
+                >
+                  Terms and conditions
+                </Link>
+                .
+              </p>
+            </div>
 
             <div className="flex items-center justify-center">
               <Button className="font-semibold" type="submit">
