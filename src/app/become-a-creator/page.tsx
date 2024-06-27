@@ -62,18 +62,12 @@ const CreatorForm: React.FC<CreatorFormProps> = ({ closeModal }) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 transition-opacity bg-black">
+    <div className="container mx-auto h-screen">
+      <h2 className="text-2xl font-bold text-center mb-6 mt-10">
+        Become a Creator
+      </h2>
       <FormProvider {...methods}>
-        <Card className="relative rounded-lg shadow-lg p-8 max-w-2xl w-full">
-          <button
-            onClick={closeModal}
-            className="absolute top-2 right-4 text-2xl"
-          >
-            &times;
-          </button>
-          <h2 className="text-2xl font-bold text-center mb-6">
-            Become a Creator
-          </h2>
+        <Card className="rounded-lg shadow-none border-none bg-secondary p-8 max-w-2xl mx-auto w-full">
           <FormDescription className="mb-6 px-4 md:px-10 mt-2 text-center">
             Please, fill in the form below to become a Creator
           </FormDescription>
@@ -206,6 +200,11 @@ const CreatorForm: React.FC<CreatorFormProps> = ({ closeModal }) => {
                 onChange={handleGenreSelect}
                 classname="border-none flex-1"
               />
+            </div>
+            <div>
+              <p className="text-xs mb-4">
+                I agree to Munkai's Terms of services and privacy policy .
+              </p>
             </div>
             <div>
               <div className="my-4 flex items-center justify-center gap-x-4">

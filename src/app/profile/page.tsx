@@ -4,7 +4,7 @@ import UserProfile from "@/components/profiles/userProfile";
 import React from "react";
 
 export default function Profile() {
-  const isCreator = true;
+  const isCreator = false;
   return (
     <div>
       {!isCreator ? (
