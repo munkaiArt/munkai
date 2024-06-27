@@ -10,12 +10,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { useRouter } from "next/navigation";
 
 function UserProfile() {
   const [activeTab, setActiveTab] = useState("Comics");
 
   const handleTabClick = (tabName: React.SetStateAction<string>) => {
     setActiveTab(tabName);
+  };
+
+  const router = useRouter();
+
+  const handleCreate = () => {
+    router.push("/create-publication");
   };
 
   return (
@@ -40,7 +47,11 @@ function UserProfile() {
             <p className="text-base font-semibold text-primary">@munkai</p>
             <p className="text-sm mt-1">124 Publications | 3890 Chapters</p>
           </div>
-          <Button size={"lg"} className="ml-auto font-semibold mt-2">
+          <Button
+            size={"lg"}
+            className="ml-auto font-semibold mt-2"
+            onClick={handleCreate}
+          >
             Create
           </Button>
         </div>
