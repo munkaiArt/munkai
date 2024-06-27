@@ -23,6 +23,8 @@ import {
   SelectLabel,
   SelectValue,
 } from "../../components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
 
 type CreatorFormValues = {
   name: string;
@@ -201,9 +203,17 @@ const CreatorForm: React.FC<CreatorFormProps> = ({ closeModal }) => {
                 classname="border-none flex-1"
               />
             </div>
-            <div>
-              <p className="text-xs mb-4">
-                I agree to Munkai's Terms of services and privacy policy .
+            <div className="flex items-center justify-center space-x-2 mt-4">
+              <Checkbox />
+              <p className="text-sm">
+                I agree to Munkai's{" "}
+                <Link
+                  href={"/terms-and-conditions"}
+                  className="text-primary font-semibold"
+                >
+                  Terms and conditions
+                </Link>
+                .
               </p>
             </div>
             <div>
