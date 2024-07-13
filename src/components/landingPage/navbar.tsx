@@ -11,8 +11,10 @@ import MunkaiLogoDark from "../../../public/images/monkai-logo-white.png";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { useTheme } from "next-themes";
 
 const Navbar: React.FC = () => {
+  const { resolvedTheme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   // Placeholder functions for icon actions (e.g., toggle theme, open notifications, open wallet)
@@ -65,9 +67,20 @@ const Navbar: React.FC = () => {
             variant={"transparent"}
             size={"icon"}
             className="text-foreground hover:rounded-full"
-            onClick={handleToggleTheme}
           >
-            <FontAwesomeIcon icon={faMoon} className="h-5 w-5" />
+            {resolvedTheme === "dark" ? (
+              <FontAwesomeIcon
+                icon={faMoon}
+                className="h-5 w-5"
+                onClick={() => setTheme("light")}
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon={faSun}
+                className="h-5 w-5"
+                onClick={() => setTheme("dark")}
+              />
+            )}
           </Button>
 
           <Button
@@ -136,7 +149,6 @@ const Navbar: React.FC = () => {
                 variant={"transparent"}
                 size={"icon"}
                 className="text-foreground hover:rounded-full"
-                onClick={handleToggleTheme}
               >
                 <FontAwesomeIcon icon={faMoon} className="h-5 w-5" />
               </Button>
