@@ -17,7 +17,6 @@ const Navbar: React.FC = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Placeholder functions for icon actions (e.g., toggle theme, open notifications, open wallet)
   const handleToggleTheme = () => {
     // Implement theme toggle logic
   };
